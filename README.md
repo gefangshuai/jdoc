@@ -11,10 +11,12 @@
 ## 文件夹目录结构
 webapp
 
-   |__ _doc
+   |-- _doc 生成的静态文档路径
 
-   |__ _include
+   |-- _include 自定义扩展存放的路径。如主题。
 
-            |__ themes
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- themes 主题存放目录
 
-   |__ _layout
+   |-- _layout  布局文件存放路径
+
+# 未完待续

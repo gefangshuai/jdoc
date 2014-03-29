@@ -1,6 +1,7 @@
 package net.wincn.config;
 
 import com.jfinal.config.*;
+import com.jfinal.render.ViewType;
 import net.wincn.route.SiteRoutes;
 
 /**
@@ -11,7 +12,9 @@ import net.wincn.route.SiteRoutes;
 public class Config extends JFinalConfig{
     @Override
     public void configConstant(Constants me) {
-
+        me.setViewType(ViewType.JSP);
+        me.setBaseViewPath("WEB-INF/views");
+        me.setDevMode(true);
     }
 
     @Override

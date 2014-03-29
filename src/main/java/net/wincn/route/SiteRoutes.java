@@ -1,6 +1,9 @@
 package net.wincn.route;
 
 import com.jfinal.config.Routes;
+import net.wincn.controller.DemoController;
+import net.wincn.controller.GenerateController;
+import net.wincn.controller.IndexController;
 
 /**
  * Description:
@@ -10,6 +13,8 @@ import com.jfinal.config.Routes;
 public class SiteRoutes extends Routes{
     @Override
     public void config() {
-
+        add("/", IndexController.class);
+        add("/generate", GenerateController.class);
+        add("/demo", DemoController.class);
     }
 }

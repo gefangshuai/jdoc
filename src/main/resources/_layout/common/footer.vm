@@ -1,0 +1,9 @@
+<!-- Footer ================================================== -->
+<footer class="footer">
+    <div class="container">
+        <p class="pull-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p>北京汉龙思琪数码科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有</p>
+    </div>
+</footer>

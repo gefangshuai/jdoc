@@ -1,27 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
-<head lang="zh">
-    <meta charset="UTF-8">
-    <!-- Le styles -->
-    <link href="$theme.name/css/bootstrap.css" rel="stylesheet">
-    <link href="$theme.name/css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="$theme.name/css/docs.css" rel="stylesheet">
-    <link href="$theme.name/js/google-code-prettify/prettify.css" rel="stylesheet">
-    <title>Demo页面</title>
-</head>
-<body data-spy="scroll" data-target=".bs-docs-sidebar">
-<!-- Navbar  ================================================== -->
-$navBar
-
-<!-- Subhead ================================================== -->
-<header class="jumbotron subhead" id="overview">
-    <div class="container">
-        <h1>$doc.title</h1>
-        <p class="lead">$doc.description</p>
-    </div>
-</header>
-
 <div class="container">
     <!-- Docs nav ================================================== -->
     <div class="row">
@@ -105,29 +81,3 @@ $navBar
         </div>
     </div>
 </div>
-<!-- Footer ================================================== -->
-<footer class="footer">
-    <div class="container">
-        <p class="pull-right">
-            <a href="#">Back to top</a>
-        </p>
-        <p>北京汉龙思琪数码科技有限公司&nbsp;&nbsp;&nbsp;&nbsp;版权所有</p>
-    </div>
-</footer>
-<!-- Le javascript  ================================================== -->
-<script src="$theme.name/js/jquery.js"></script>
-<script src="$theme.name/js/google-code-prettify/prettify.js"></script>
-<script src="$theme.name/js/bootstrap.min.js"></script>
-<script>
-    (function(){
-        var $window = $(window)
-        $('.bs-docs-sidenav').affix({
-            offset: {
-                top: function () { return $window.width() <= 980 ? 290 : 210 }
-                , bottom: 270
-            }
-        })
-    })();
-</script>
-</body>
-</html>

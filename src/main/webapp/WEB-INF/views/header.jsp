@@ -16,7 +16,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li <c:if test="${nav eq 'index'}">class="active" </c:if> ><a href="/"><span class="glyphicon-home glyphicon"></span> 首页</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-eye-open"></span> 预览</a></li>
+                <li><a href="/doc"><span class="glyphicon glyphicon-eye-open"></span> 预览</a></li>
                 <li><a href="/demo"><span class="glyphicon glyphicon-align-justify"></span> 文档模版</a></li>
             </ul>
         </div>

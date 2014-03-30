@@ -1,7 +1,6 @@
 package net.wincn.core.utils;
 
 import com.jfinal.kit.PathKit;
-import net.wincn.core.bean.Config;
 import net.wincn.core.constant.AppConstant;
 import org.apache.commons.io.FileUtils;
 
@@ -15,14 +14,12 @@ import java.io.IOException;
  */
 public class DocFileUtils {
 
-    private static final String MD_PATH = PathKit.getWebRootPath()+"/"+ AppConstant.POST_PATH;
-
     /**
      * 获取所有markdown文件列表
      * @return
      */
     public static File[] listMdFiles(){
-        return new File(MD_PATH).listFiles();
+        return new File(AppConstant.POST_DIR_PATH).listFiles();
     }
 
     /**
@@ -35,10 +32,10 @@ public class DocFileUtils {
     }
 
     public static String getDocPath() {
-        return PathKit.getWebRootPath()+"/"+AppConstant.DOC_PATH;
+        return AppConstant.DOC_PATH;
     }
 
     public static String getResourcesPath() {
-        return PathKit.getWebRootPath()+"/"+AppConstant.INCLUDE_PATH+"/themes/"+ Config.themeName;
+        return AppConstant.INCLUDE_PATH+"/themes/"+ AppConfigUtils.getTheme();
     }
 }

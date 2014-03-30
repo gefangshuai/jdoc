@@ -1,6 +1,9 @@
 package net.wincn.core.engine;
 
+import net.wincn.core.utils.AppConfigUtils;
 import net.wincn.core.utils.DocFileUtils;
+import net.wincn.core.utils.VelocityUtils;
+import org.apache.velocity.VelocityContext;
 
 import java.io.IOException;
 
@@ -29,8 +32,21 @@ public class GenerateEngine {
     public void generate(){
         try {
             DocFileUtils.copyResources();
+            VelocityUtils.generatePost(getContext());
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private VelocityContext getContext() {
+        VelocityContext context = new VelocityContext();
+        context.put("theme", AppConfigUtils.getTheme());
+        context.put("site", AppConfigUtils.getSite());
+
+
+        context.put("doc", AppConfigUtils.getDoc());
+        context.put("menu", AppConfigUtils.getMenu());
+        context.put("slider", AppConfigUtils.getSlider());
+        return context;
     }
 }

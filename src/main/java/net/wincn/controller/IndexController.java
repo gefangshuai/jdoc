@@ -16,10 +16,12 @@ public class IndexController extends Controller{
     public void index(){
         getPostCount();
         setAttr("postCount", postCount);
+        setAttr("webRoot", PathKit.getWebRootPath());
     }
 
     public void getPostCount() {
         String postDir = PathKit.getWebRootPath()+"/post";
         postCount = new File(postDir).listFiles().length;
     }
+
 }

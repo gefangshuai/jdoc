@@ -1,0 +1,7 @@
+<!-- Subhead ================================================== -->
+<header class="jumbotron subhead" id="overview">
+    <div class="container">
+        <h1>$doc.title</h1>
+        <p class="lead">$doc.description</p>
+    </div>
+</header>

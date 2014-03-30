@@ -1,5 +1,8 @@
 package net.wincn.core.bean;
 
+import net.wincn.core.constant.AppConstant;
+
+import java.io.File;
 import java.util.List;
 
 /**
@@ -10,10 +13,19 @@ import java.util.List;
 public class Doc {
     private String title;   //标题
     private String description; //描述
-    private String directory;   //目录
+    private String path;   //目录
     private String link;    //连接
     private List<Menu> menu;  //所属菜单
     private List<Slider> sliderList;    //侧边导航
+    private String layout;  //布局文件
+    private String ctx; //上下文，如../../
+    public String getLayout() {
+        return layout;
+    }
+
+    public void setLayout(String layout) {
+        this.layout = layout;
+    }
 
     public String getDescription() {
         return description;
@@ -31,12 +43,14 @@ public class Doc {
         this.title = title;
     }
 
-    public String getDirectory() {
-        return directory;
+    public String getPath() {
+        return path;
     }
 
-    public void setDirectory(String directory) {
-        this.directory = directory;
+    public void setPath(File mdFile) {
+        String path = AppConstant.DOC_PATH + "/" + mdFile.getName().replace("-", "/").replace(".md", ".html");
+
+        this.path = path;
     }
 
     public String getLink() {
@@ -61,5 +75,18 @@ public class Doc {
 
     public void setSliderList(List<Slider> sliderList) {
         this.sliderList = sliderList;
+    }
+
+    public String getCtx() {
+        String _ctx = path.substring(path.indexOf("/_doc/")+5);
+        int length = _ctx.split("/").length;
+        _ctx = "";
+        for (int i = 1; i<length - 1; i++)
+            _ctx += "../";
+        return _ctx;
+    }
+
+    public void setCtx(String ctx) {
+        this.ctx = ctx;
     }
 }

@@ -1,6 +1,5 @@
 package net.wincn.core.utils;
 
-import com.jfinal.kit.PathKit;
 import net.wincn.core.constant.AppConstant;
 import org.apache.commons.io.FileUtils;
 

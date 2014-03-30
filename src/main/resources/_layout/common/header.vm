@@ -1,9 +1,9 @@
 <head lang="zh">
     <meta charset="UTF-8">
     <!-- Le styles -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
-    <link href="css/docs.css" rel="stylesheet">
-    <link href="js/google-code-prettify/prettify.css" rel="stylesheet">
+    <link href="${ctx}css/bootstrap.css" rel="stylesheet">
+    <link href="${ctx}css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="${ctx}css/docs.css" rel="stylesheet">
+    <link href="${ctx}js/google-code-prettify/prettify.css" rel="stylesheet">
     <title>${doc.title} - $site</title>
 </head>

@@ -1,4 +1,4 @@
-基于Jyaml和velocity的markdown文档生成工具
+基于markdown文档生成工具
 ======
 将markdown以一定的规范解析成静态资源。
 

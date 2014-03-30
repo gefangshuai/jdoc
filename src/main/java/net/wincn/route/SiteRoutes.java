@@ -2,7 +2,7 @@ package net.wincn.route;
 
 import com.jfinal.config.Routes;
 import net.wincn.controller.DemoController;
-import net.wincn.controller.DocController;
+import net.wincn.controller.HtmlController;
 import net.wincn.controller.GenerateController;
 import net.wincn.controller.IndexController;
 
@@ -17,6 +17,6 @@ public class SiteRoutes extends Routes{
         add("/", IndexController.class);
         add("/generate", GenerateController.class);
         add("/demo", DemoController.class);
-        add("/doc", DocController.class);
+        add("/doc", HtmlController.class);
     }
 }

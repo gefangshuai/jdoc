@@ -5,7 +5,7 @@ import net.wincn.core.bean.AppConfig;
 import net.wincn.core.bean.Doc;
 import net.wincn.core.bean.Menu;
 import net.wincn.core.bean.Slider;
-import net.wincn.core.constant.AppConstant;
+import org.apache.commons.lang3.StringUtils;
 import org.ho.yaml.Yaml;
 
 /**
@@ -44,12 +44,12 @@ public class AppConfigUtils {
      * 获得文档输出路径
      * @return
      */
-    public static String getDocOutPath() {
-        return AppConstant.DOC_PATH+"/1.html";
+    public static String getDocOutPath(Doc doc) {
+        return doc.getPath();
     }
 
-    public static String getPostTemplate() {
-        return getConfig().getPostVM();
+    public static String getPostTemplate(Doc doc) {
+        return StringUtils.isBlank(doc.getLayout())?getConfig().getPostVM():doc.getLayout();
     }
 
     public static Object getSite() {

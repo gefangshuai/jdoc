@@ -1,10 +1,13 @@
 package net.wincn.core.engine;
 
+import net.wincn.core.bean.Doc;
 import net.wincn.core.utils.AppConfigUtils;
 import net.wincn.core.utils.DocFileUtils;
 import net.wincn.core.utils.VelocityUtils;
 import org.apache.velocity.VelocityContext;
+import org.ho.yaml.Yaml;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -29,24 +32,29 @@ public class GenerateEngine {
     /**
      * 生成文件
      */
-    public void generate(){
+    public void generate() {
         try {
             DocFileUtils.copyResources();
-            VelocityUtils.generatePost(getContext());
+
+            for (File mdFile : DocFileUtils.listMdFiles()) {
+                Doc doc = Yaml.loadType(mdFile, Doc.class);
+                doc.setPath(mdFile);
+                VelocityUtils.generateDoc(getContext(doc), doc);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private VelocityContext getContext() {
+    private VelocityContext getContext(Doc doc) {
         VelocityContext context = new VelocityContext();
         context.put("theme", AppConfigUtils.getTheme());
         context.put("site", AppConfigUtils.getSite());
+        context.put("ctx", doc.getCtx());
 
-
-        context.put("doc", AppConfigUtils.getDoc());
-        context.put("menu", AppConfigUtils.getMenu());
-        context.put("slider", AppConfigUtils.getSlider());
+        context.put("doc", doc);
+        context.put("menu", doc.getMenu());
+        context.put("slider", doc.getSliderList());
         return context;
     }
 }

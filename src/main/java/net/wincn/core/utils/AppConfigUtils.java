@@ -8,13 +8,17 @@ import net.wincn.core.bean.Slider;
 import org.apache.commons.lang3.StringUtils;
 import org.ho.yaml.Yaml;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.List;
+
 /**
  * 获得站点信息的工具类
  * Author: gefangshuai
  * Create: 2014-03-30 09:07
  */
 public class AppConfigUtils {
-    private static final String YAML_PATH = PathKit.getRootClassPath()+"/resources/config.yaml";
+    private static final String YAML_PATH = PathKit.getRootClassPath()+"/config.yml";
     public static String getTheme() {
         return getConfig().getTheme();
     }
@@ -24,9 +28,8 @@ public class AppConfigUtils {
         return doc;
     }
 
-    public static Menu getMenu() {
-        Menu menu = new Menu();
-        return menu;
+    public static List<Menu> getMenus() {
+        return getConfig().getMenus();
     }
 
 
@@ -36,7 +39,12 @@ public class AppConfigUtils {
     }
 
     private static AppConfig getConfig(){
-        AppConfig config = Yaml.loadType(YAML_PATH, AppConfig.class);
+        AppConfig config = null;
+        try {
+            config = Yaml.loadType(new File(YAML_PATH), AppConfig.class);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         return config;
     }
 

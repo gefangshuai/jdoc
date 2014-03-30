@@ -1,0 +1,8 @@
+site: "一个测试站点"
+theme: "bs2"
+menus:
+  - title: 菜单一
+    link: hello.html
+  - title: 菜单二
+    link: world.html
+  - title: 菜单三

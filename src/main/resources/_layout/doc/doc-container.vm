@@ -1,15 +1,7 @@
 <div class="container">
     <!-- Docs nav ================================================== -->
     <div class="row">
-        <div class="span3 bs-docs-sidebar">
-            <ul class="nav nav-list bs-docs-sidenav">
-                <li><a href="#summary"><i class="icon-chevron-right"></i> 概述</a></li>
-                <li><a href="#desc"><i class="icon-chevron-right"></i> 相关技术</a></li>
-                <li><a href="#faxing"><i class="icon-chevron-right"></i> 发行说明</a> </li>
-                <li><a href="#jiegou"><i class="icon-chevron-right"></i> 结构说明</a></li>
-                <li><a href="#"><i class="icon-chevron-right"></i> 待补充</a></li>
-            </ul>
-        </div>
+        #parse("./_layout/doc/doc-slider.vm")
         <div class="span9">
             <!-- Download  ================================================== -->
             <section id="summary">
@@ -17,24 +9,6 @@
                     <h1>概述</h1>
                 </div>
                 <p class="lead">smartFramework 是一套企业级web快速安全智能开发框架，旨在解决档案系统多样化的问题。</p>
-            </section>
-
-            <section id="desc">
-                <div class="page-header">
-                    <h1>相关技术</h1>
-                    <p class="lead">
-                        前端：javascript、jquery1.7+、css3、bootstrap 2.0。
-                    </p>
-                    <p class="lead">
-                        MVC：Spring MVC。
-                    </p>
-                    <p class="lead">
-                        安全：apache shiro。
-                    </p>
-                    <p class="lead">
-                        检索：apache solr。
-                    </p>
-                </div>
             </section>
 
             <section id="faxing">

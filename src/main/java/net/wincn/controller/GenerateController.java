@@ -13,5 +13,6 @@ import java.io.IOException;
 public class GenerateController extends Controller {
     public void index() throws IOException {
         GenerateEngine.getInstance().generate();
+        renderText("生成成功！");
     }
 }

@@ -37,18 +37,14 @@
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">任务信息</h3>
+                        <h3 class="panel-title">文档信息</h3>
                     </div>
                     <div class="panel-body">
-                        已生成 0 篇文章！
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <h3>生成进度：</h3>
-                <div class="progress progress-striped active">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
-                        <span class="sr-only">60% Complete</span>
+                        <ul>
+                        <c:forEach items="${htmls}" var="html">
+                            <li><a href="${html}">${html}</a></li>
+                        </c:forEach>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -59,21 +55,15 @@
     <script type="text/javascript">
         (function(){
             $('#btnGenerate').on('click', function(){
-                var timer = setInterval(function(){
-                    var realLen = $('div.progress').width();
-                    var current = $('div.progress-bar').width();
-                    if(current < realLen){
-                        current += realLen/10;
-                        $('div.progress-bar').width(current);
-                    }else{
-                        console.log('完成！');
-                        clearInterval(timer);
-                    }
-                },500);
-                $.get('/generate/', function(data){
+                var $this = $(this);
+                $this.attr('disabled', 'disabled').html('<span class="glyphicon glyphicon-refresh"></span> 正在生成');
 
+               $.get('/generate/', function(data){
+                    alert("生成完成！")
+                   location.reload();
                 },'text');
             });
+
         })();
     </script>
 </body>

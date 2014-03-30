@@ -15,7 +15,7 @@ public class Doc {
     private String description; //描述
     private String path;   //目录
     private String link;    //连接
-    private List<Menu> menu;  //所属菜单
+    private Menu menu;  //所属菜单
     private List<Slider> sliderList;    //侧边导航
     private String layout;  //布局文件
     private String ctx; //上下文，如../../
@@ -61,11 +61,11 @@ public class Doc {
         this.link = link;
     }
 
-    public List<Menu> getMenu() {
+    public Menu getMenu() {
         return menu;
     }
 
-    public void setMenu(List<Menu> menu) {
+    public void setMenu(Menu menu) {
         this.menu = menu;
     }
 

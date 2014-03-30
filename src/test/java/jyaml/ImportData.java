@@ -1,5 +1,6 @@
 package jyaml;
 
+import net.wincn.core.bean.AppConfig;
 import org.ho.yaml.Yaml;
 
 import java.io.File;
@@ -11,7 +12,7 @@ import java.io.FileNotFoundException;
  */
 public class ImportData {
     public static void main(String[] args) throws FileNotFoundException {
-        Person person = Yaml.loadType(new File("test.yml"), Person.class);
-        System.out.println(person);
+        AppConfig config = Yaml.loadType(new File("test.yml"), AppConfig.class);
+        System.out.println(config.getMenus());
     }
 }

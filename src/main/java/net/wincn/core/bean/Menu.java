@@ -9,15 +9,20 @@ import java.util.List;
  */
 public class Menu {
     private String title;    //名称
-    private Doc doc;    //关联文章
-    private List<Menu> menuList;    //子菜单
+    private List<Menu> children;    //子菜单
 
-    public List<Menu> getMenuList() {
-        return menuList;
-    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
 
-    public void setMenuList(List<Menu> menuList) {
-        this.menuList = menuList;
+        Menu menu = (Menu) o;
+
+        if (!title.equals(menu.title))
+            return false;
+
+        return true;
     }
 
     public String getTitle() {
@@ -28,11 +33,11 @@ public class Menu {
         this.title = title;
     }
 
-    public Doc getDoc() {
-        return doc;
+    public List<Menu> getChildren() {
+        return children;
     }
 
-    public void setDoc(Doc doc) {
-        this.doc = doc;
+    public void setChildren(List<Menu> children) {
+        this.children = children;
     }
 }

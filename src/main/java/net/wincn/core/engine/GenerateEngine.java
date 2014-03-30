@@ -50,10 +50,10 @@ public class GenerateEngine {
         VelocityContext context = new VelocityContext();
         context.put("theme", AppConfigUtils.getTheme());
         context.put("site", AppConfigUtils.getSite());
-        context.put("ctx", doc.getCtx());
+        context.put("menus", AppConfigUtils.getMenus());
 
+        context.put("ctx", doc.getCtx());
         context.put("doc", doc);
-        context.put("menu", doc.getMenu());
         context.put("slider", doc.getSliderList());
         return context;
     }

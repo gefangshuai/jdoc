@@ -12,7 +12,7 @@
 
 body {
   position: relative;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 /* Code in headings */
@@ -249,7 +249,7 @@ hr.soften {
 
 
 
-/* Marketing section of Overview
+/* Marketing Section of Overview
 -------------------------------------------------- */
 
 .marketing {
@@ -393,7 +393,7 @@ hr.soften {
   margin-top: 5px;
 }
 
-/* Space out h3s when following a section */
+/* Space out h3s when following a Section */
 .download h3 {
   margin-bottom: 5px;
 }
@@ -434,7 +434,7 @@ hr.soften {
   color: #777;
 }
 
-/* Variables section */
+/* Variables Section */
 #variables label {
   margin-bottom: 0;
 }

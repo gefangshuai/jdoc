@@ -2,7 +2,7 @@
 <html>
     #parse("./_layout/common/header.vm");
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
-    #parse("./_layout/doc/doc-navbar.vm")
+    #parse("./_layout/common/navbar.vm")
     #parse("./_layout/doc/doc-header.vm")
     #parse("./_layout/doc/doc-container.vm")
     #parse("./_layout/common/footer.vm")

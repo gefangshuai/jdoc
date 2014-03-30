@@ -1,5 +1,7 @@
 package net.wincn.core.bean;
 
+import java.util.List;
+
 /**
  * 配置信息(已给出了默认值)
  * Author: gefangshuai
@@ -9,6 +11,7 @@ public class AppConfig {
     public  String site = "JDOC";    //站点名称
     public  String theme = "bs2";   //主题名称
     public  String postVM = "_layout/post.vm";
+    public List<Menu> menus;    //所有菜单配置
 
     public String getSite() {
         return site;
@@ -32,5 +35,13 @@ public class AppConfig {
 
     public void setPostVM(String postVM) {
         this.postVM = postVM;
+    }
+
+    public List<Menu> getMenus() {
+        return menus;
+    }
+
+    public void setMenus(List<Menu> menus) {
+        this.menus = menus;
     }
 }

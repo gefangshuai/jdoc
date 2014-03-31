@@ -16,24 +16,41 @@ public class MDHParse extends MDParse {
     public String parse(String mdString) {
         if (StringUtils.isNotBlank(mdString)) {
             if (mdString.startsWith("######")) {
+                this.setLevel(6);
                 return parse(mdString, 6);
             }else if(mdString.startsWith("#####")) {
+                this.setLevel(5);
                 return parse(mdString, 5);
             }else if(mdString.startsWith("####")) {
+                this.setLevel(4);
                 return parse(mdString, 4);
             }else if(mdString.startsWith("###")) {
+                this.setLevel(3);
                 return parse(mdString, 3);
             }else if(mdString.startsWith("##")) {
+                this.setLevel(2);
                 return parse(mdString, 2);
             }else if(mdString.startsWith("#")) {
+                this.setLevel(1);
                 return parse(mdString, 1);
             }
         }
         return "";
     }
 
+    /**
+     * 判断是否为h1标记
+     * @param string
+     * @return
+     */
+    public static boolean isH1(String string){
+        if(StringUtils.isNotBlank(string) && string.startsWith("#") && !string.substring(1,2).equals("#"))
+            return true;
+        return false;
+    }
+
     public String parse(String mdString, int level) {
-        return "<h"+level+">" + mdString.substring(level).trim() + "</h"+level+">";
+        return mdString.substring(level).trim();
     }
 
     @Test

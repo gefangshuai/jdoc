@@ -16,9 +16,20 @@ public class Doc {
     private String path;   //目录
     private String link;    //连接
     private Menu menu;  //所属菜单
-    private List<Slider> sliderList;    //侧边导航
+
     private String layout;  //布局文件
     private String ctx; //上下文，如../../
+    private List<Section> sections; //每节内容
+
+
+    public List<Section> getSections() {
+        return sections;
+    }
+
+    public void setSections(List<Section> sections) {
+        this.sections = sections;
+    }
+
     public String getLayout() {
         return layout;
     }
@@ -69,13 +80,6 @@ public class Doc {
         this.menu = menu;
     }
 
-    public List<Slider> getSliderList() {
-        return sliderList;
-    }
-
-    public void setSliderList(List<Slider> sliderList) {
-        this.sliderList = sliderList;
-    }
 
     public String getCtx() {
         String _ctx = path.substring(path.indexOf("/_doc/")+5);

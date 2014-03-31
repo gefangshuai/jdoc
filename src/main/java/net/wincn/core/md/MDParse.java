@@ -10,15 +10,24 @@ import java.io.IOException;
  * Create: 2014-03-30 11:26
  */
 public abstract class MDParse {
+    private int level;  //级别 h1~h6
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     /**
      * 将md文件读取成字符串数组，以回车分隔。
      * @param mdFile
      * @return
      */
-    public String[] getMDString(File mdFile){
+    public static String getMDString(File mdFile){
         try {
-            return FileUtils.readFileToString(mdFile).split("\n");
+            return FileUtils.readFileToString(mdFile);
         } catch (IOException e) {
             e.printStackTrace();
             return null;

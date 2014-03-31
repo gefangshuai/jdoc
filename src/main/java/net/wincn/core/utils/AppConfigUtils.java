@@ -4,7 +4,6 @@ import com.jfinal.kit.PathKit;
 import net.wincn.core.bean.AppConfig;
 import net.wincn.core.bean.Doc;
 import net.wincn.core.bean.Menu;
-import net.wincn.core.bean.Slider;
 import org.apache.commons.lang3.StringUtils;
 import org.ho.yaml.Yaml;
 
@@ -33,10 +32,6 @@ public class AppConfigUtils {
     }
 
 
-    public static Slider getSlider() {
-        Slider slider = new Slider();
-        return slider;
-    }
 
     private static AppConfig getConfig(){
         AppConfig config = null;

@@ -1,9 +1,7 @@
 <div class="span3 bs-docs-sidebar">
     <ul class="nav nav-list bs-docs-sidenav">
-        <li><a href="#summary"><i class="icon-chevron-right"></i> 概述</a></li>
-        <li><a href="#desc"><i class="icon-chevron-right"></i> 相关技术</a></li>
-        <li><a href="#faxing"><i class="icon-chevron-right"></i> 发行说明</a> </li>
-        <li><a href="#jiegou"><i class="icon-chevron-right"></i> 结构说明</a></li>
-        <li><a href="#"><i class="icon-chevron-right"></i> 待补充</a></li>
+        #foreach($s in ${doc.sections})
+            <li><a href="#${s.id}"><i class="icon-chevron-right"></i> ${s.title}</a></li>
+        #end
     </ul>
 </div>

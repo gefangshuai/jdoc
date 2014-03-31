@@ -4,54 +4,14 @@
         #parse("./_layout/doc/doc-slider.vm")
         <div class="span9">
             <!-- Download  ================================================== -->
-            <section id="summary">
-                <div class="page-header">
-                    <h1>概述</h1>
-                </div>
-                <p class="lead">smartFramework 是一套企业级web快速安全智能开发框架，旨在解决档案系统多样化的问题。</p>
-            </section>
-
-            <section id="faxing">
-                <div class="page-header">
-                    <h1>发行说明</h1>
-                </div>
-                <h3>版本说明</h3>
-                <p>版本以4段有效数字命名，如 <code>3.01.01.001</code> ：</p>
-                第一段 <code>&nbsp;&nbsp;3</code>： 表示大版本号。如smartFramework目前为3.0，即此位数字。从1开始。<br />
-                第二段 <code>&nbsp;01</code>： 表示重大版本更新。一般指加入新的功能或者功能更换。此位数字为2位流水，从01开始。<br />
-                第三段 <code>&nbsp;01</code>： 表示功能优化及升级。此位数字为2位流水，从01开始。<br />
-                第四段 <code>001</code>： 表示程序迭代版本。一般指对功能进行bug的修改。
-            </section>
-
-            <section id="jiegou">
-                <div class="page-header">
-                    <h1>机构说明</h1>
-                </div>
-                <h3>项目结构</h3>
-                <p>整个产品框架分为6个大模块：
-                    <code>业务模块（smart-common）</code>、
-                    <code>存储模块（smart-storage）</code>、
-                    <code>安全模块（smart-security）</code>、
-                    <code>核心模块（smart-core）</code>、
-                    <code>jar管理模块（smart-jar）</code>
-                </p>
-                <h4>业务模块（smart-common）</h4>
-                <p>此模块存放所有与业务有关的相关代码。</p>
-                <h4>存储模块（smart-storage）</h4>
-                <p>此模块存放所有与存储有关的代码</p>
-                <h4>安全模块（smart-security）</h4>
-                <p>此模块存放所有与安全验证有关的代码</p>
-                <h4>核心模块（smart-core）</h4>
-                <p>此模块为框架核心代码</p>
-                <h4>jar管理模块（smart-jar）</h4>
-                <p>此模块定义了整个框架的jar引用</p>
-            </section>
-
-            <section>
-                <div class="page-header">
-                    <h1>待补充</h1>
-                </div>
-            </section>
+            #foreach($section in ${doc.sections})
+                <section id="${section.id}">
+                    <div class="page-header">
+                        <h1>${section.title}</h1>
+                    </div>
+                    ${section.content}
+                </section>
+            #end
         </div>
     </div>
 </div>
